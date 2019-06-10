@@ -17,7 +17,7 @@ RUN curl -fsSL http://archive.apache.org/dist/maven/maven-3/3.3.9/binaries/apach
 RUN cd /tmp/ && git clone https://github.com/alibaba/DataX.git &&\
     cd /tmp/DataX/otsstreamreader/ && curl -O https://raw.githubusercontent.com/qq275860560/datax/master/src/main/centos/tmp/DataX/otsstreamreader/pom.xml  &&\
     echo 'export DATAX_SRC_HOME=/tmp/DataX/'  >> /etc/profile && source /etc/profile &&\
-    cd /tmp/Datax && mvn install -DskipTests
+    cd /tmp/DataX && mvn install -DskipTests
      
 
 

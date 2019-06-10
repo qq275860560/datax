@@ -9,8 +9,8 @@ RUN curl -fSL http://datax-opensource.oss-cn-hangzhou.aliyuncs.com/datax.tar.gz 
     chmod -R 755 /usr/local/datax
 
 RUN cd /tmp/ && git clone https://github.com/alibaba/DataX.git &&\
-    cd /tmp/datax/src/main/centos/tmp/DataX/otsstreamreader/ && curl -O https://raw.githubusercontent.com/qq275860560/datax/master/src/main/centos/tmp/DataX/otsstreamreader/pom.xml  &&\
-    echo 'export DATAX_SRC_HOME=/tmp/DataX/' 
+    cd /tmp/DataX/otsstreamreader/ && curl -O https://raw.githubusercontent.com/qq275860560/datax/master/src/main/centos/tmp/DataX/otsstreamreader/pom.xml  &&\
+    echo 'export DATAX_SRC_HOME=/tmp/DataX/'  >> /etc/profile && source /etc/profile
      
 
 

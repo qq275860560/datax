@@ -8,6 +8,11 @@ RUN curl -fSL http://datax-opensource.oss-cn-hangzhou.aliyuncs.com/datax.tar.gz 
     echo 'export PATH=$PATH:$DATAX_HOME/bin'   >> /etc/profile && source /etc/profile &&\
     chmod -R 755 /usr/local/datax
 
+RUN cd /tmp/ && git clone https://github.com/alibaba/DataX.git &&\
+     echo 'export DATAX_SRC_HOME=/tmp/DataX/' 
+
+
+    
 CMD source /etc/profile &&\
      service sshd start &&\
      service datax start 	

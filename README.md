@@ -12,13 +12,14 @@ datax镜像
 
 # 使用方式
 ```
+# docker build -t qq275860560/datax .
 docker pull qq275860560/datax
-docker run -it qq275860560/datax /bin/bash
+docker run -it --name datax qq275860560/datax /bin/bash
 
 ```
 
 ```
-python /usr/local/datax/bin/datax.py /usr/local/datax/job/datax1.json
+python /usr/local/datax/bin/datax.py /usr/local/datax/job/mysql-mysql.json
 ```
 
 # 温馨提醒

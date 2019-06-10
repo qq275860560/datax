@@ -17,6 +17,10 @@ docker run -it qq275860560/datax /bin/bash
 
 ```
 
+```
+python /usr/local/datax/bin/datax.py /usr/local/datax/job/datax1.json
+```
+
 # 温馨提醒
 
 * 此项目将会长期维护，增加或改进实用的功能

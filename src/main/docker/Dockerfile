@@ -16,10 +16,13 @@ RUN curl -fsSL http://archive.apache.org/dist/maven/maven-3/3.3.9/binaries/apach
 
 RUN cd /tmp/ && git clone https://github.com/alibaba/DataX.git &&\
     cd /tmp/DataX/otsstreamreader/ && curl -O https://raw.githubusercontent.com/qq275860560/datax/master/src/main/centos/tmp/DataX/otsstreamreader/pom.xml  &&\
-    echo 'export DATAX_SRC_HOME=/tmp/DataX/'  >> /etc/profile && source /etc/profile &&\
-    cd /tmp/DataX && mvn install -DskipTests
+    echo 'export DATAX_SRC_HOME=/tmp/DataX/'  >> /etc/profile && source /etc/profile
+    
+#RUN wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo &&\
+#    yum -y install apache-maven
      
-RUN echo 'export DATAX_HOME=/tmp/DataX/core/target/datax/' >> /etc/profile && source /etc/profile &&\
+RUN cd /tmp/DataX && mvn install -DskipTests &&\
+    echo 'export DATAX_HOME=/tmp/DataX/core/target/datax/' >> /etc/profile && source /etc/profile &&\
     echo 'export PATH=$PATH:$DATAX_HOME/bin'   >> /etc/profile && source /etc/profile &&\
     chmod -R 755 $DATAX_HOME
 

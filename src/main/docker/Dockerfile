@@ -17,7 +17,7 @@ RUN wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-mave
     yum -y install apache-maven
      
 #RUN cd /tmp/DataX && mvn install -DskipTests &&\
-#    echo 'export DATAX_HOME=/tmp/DataX/core/target/datax/' >> /etc/profile && source /etc/profile &&\
+#    echo 'export DATAX_HOME=$DATAX_SRC_HOME/core/target/datax/' >> /etc/profile && source /etc/profile &&\
 #    echo 'export PATH=$PATH:$DATAX_HOME/bin'   >> /etc/profile && source /etc/profile &&\
 #    chmod -R 755 $DATAX_HOME
 

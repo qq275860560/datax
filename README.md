@@ -12,14 +12,17 @@ datax镜像
 
 # 使用方式
 ```
+# 构建
 # docker build -t qq275860560/datax .
+# 拉取
 docker pull qq275860560/datax
+# 运行
 docker run -it --name datax qq275860560/datax /bin/bash
+# 测试
+docker exec -it datax /bin/bash -c "source /etc/profile && cd /usr/local/datax/job/ &&\
+curl -O https://raw.githubusercontent.com/qq275860560/datax/master/src/main/centos/usr/local/datax/job/mysql-mysql.json &&\
+python /usr/local/datax/bin/datax.py /usr/local/datax/job/mysql-mysql.json"
 
-```
-
-```
-python /usr/local/datax/bin/datax.py /usr/local/datax/job/mysql-mysql.json
 ```
 
 # 温馨提醒

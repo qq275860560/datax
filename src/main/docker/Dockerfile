@@ -26,10 +26,6 @@ RUN cd /tmp/DataX && mvn install -DskipTests &&\
     echo 'export PATH=$PATH:$DATAX_HOME/bin'   >> /etc/profile && source /etc/profile &&\
     chmod -R 755 $DATAX_HOME
 
-RUN  cd $DATAX_HOME/job/ && curl -O https://raw.githubusercontent.com/qq275860560/datax/master/src/main/centos/usr/local/datax/job/mysql-mysql.json  &&\
-     cd $DATAX_HOME/job/ && curl -O https://raw.githubusercontent.com/qq275860560/datax/master/src/main/centos/usr/local/datax/job/mysql-print.json  
-
-    
 CMD source /etc/profile &&\
      service sshd start &&\
      service datax start 	

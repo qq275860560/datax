@@ -30,7 +30,7 @@
                                 ]
                             }
                         ]
-                    }
+                    }`
                 },
                "writer":  {
                     "name": "mysqlwriter",

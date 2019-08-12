@@ -9,6 +9,10 @@ datax镜像
 ## 解压datax
 ## 配置datax
 
+## 下载jenkins
+## 解压jenkins
+## 配置jenkins
+
 
 # 使用方式
 ```
@@ -17,14 +21,15 @@ datax镜像
 # 拉取
 docker pull qq275860560/datax
 # 运行
-docker run -it --name datax qq275860560/datax /bin/bash
+docker run -d -p 8081:8081 --name datax qq275860560/datax 
 # 测试
-docker exec -it datax /bin/bash -c "source /etc/profile && cd /usr/local/datax/job/ && curl -O https://raw.githubusercontent.com/qq275860560/datax/master/src/main/centos/usr/local/datax/job/mysql-mysql.json"
-docker exec -it datax /bin/bash -c "source /etc/profile && python /usr/local/datax/bin/datax.py /usr/local/datax/job/mysql-mysql.json"
+curl localhost:8081 
+```
 
-docker exec -it datax /bin/bash -c "source /etc/profile && cd /tmp &&  git clone https://github.com/qq275860560/dataxweb.git “
-docker exec -it datax /bin/bash -c "source /etc/profile && cd /tmp/dataxweb && mvn spring-boot:run "
-
+# windows使用方式
+```
+#windows下载安装python27和datax
+python d:/datax/bin/datax.py d:/datax/job/mysql-mysql.json
 ```
 
 # 温馨提醒

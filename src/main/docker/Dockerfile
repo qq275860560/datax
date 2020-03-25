@@ -26,7 +26,7 @@ RUN mkdir -pv /usr/local/datax/plugin/writer/httpwriter &&\
 # install jenkins
 RUN wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo && \
     rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key && \
-    yum -y  install  jenkins && yum -y update jenkins &&\
+    yum info jenkins && yum -y  install  jenkins && yum -y update jenkins &&\
     yum -y clean all && rm -rf /var/cache/yum/*  /tmp/* /var/tmp/*
 
 # init jenkins
